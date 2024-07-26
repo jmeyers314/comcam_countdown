@@ -33,7 +33,9 @@
 
     <script>
         function countdown() {
-            const targetDate = new Date("Sep 2, 2024 00:00:00").getTime();
+            // Set the target date and time in Chile/Santiago time zone (standard time)
+            const targetDate = new Date("Sep 2, 2024 19:20:00 GMT-4").getTime(); // GMT-4 for Chile/Santiago time zone
+            // Note: after Sep 8, 2024, Chile/Santiago time zone will be GMT-3 due to daylight saving time
             const now = new Date().getTime();
             const distance = targetDate - now;
 
@@ -46,7 +48,7 @@
                 + minutes + "m " + seconds + "s ";
 
             if (distance < 0) {
-                document.getElementById("timer").innerHTML = "EXPIRED";
+                document.getElementById("timer").innerHTML = "Hooray!";
             }
         }
 
